@@ -1,8 +1,4 @@
-clear
-clc
-
-searchFolder = '\\root\projects';
-indexName = 'fileIndex.mat';
+function [fileArray2,snArray2Num] = test(searchFolder,indexName)
 
 if exist(indexName,'file') == 2
     reindex = questdlg('Do you want to update the file index?','File Index Dialog','Yes','No','No');
@@ -54,7 +50,5 @@ snArray2 = snArray(~idxEmpty);
 % Convert cell array of strings to matrix of numbers
 snArray2Num = cellfun(@convertSN,snArray2);
 
-% Search for specific serial numbers
-idxMatch = snArray2Num >= 211 & snArray2Num <= 277;
-snMatch = snArray2Num(idxMatch);
-fileMatch = fileArray2(idxMatch);
+
+end
